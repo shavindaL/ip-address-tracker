@@ -6,28 +6,38 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        'rubik'  :"'Rubik', sans-serif",
+      fontFamily: {
+        'rubik': "'Rubik', sans-serif",
       },
-      fontWeight:{
-        'weight-800' : 800,
-        'weight-500' : 500,
-        'weight-400' : 400,
+      fontWeight: {
+        'weight-800': 800,
+        'weight-500': 500,
+        'weight-400': 400,
       },
-      colors:{
-        'very-dark-grey' : 'hsl(0, 0%, 17%)',
-        'dark-grey' : 'hsl(0, 0%, 59%)',
+      colors: {
+        'very-dark-grey': 'hsl(0, 0%, 17%)',
+        'dark-grey': 'hsl(0, 0%, 59%)',
       },
-      height:{
-        'desktop':'1440px',
-        'mobile':'375px',
+      width: {
+        'w-900': '900px',
+        'w-200': '200px',
+        'vh-1/2' : '50vh'
       },
-      screens:{
-        'desktop':'1440px',
-        'mobile':'375px',
+      height: {
+        'desktop': '1440px',
+        'mobile': '375px',
+        '62px' : '62px'
       },
-      backgroundImage:{
-        'img-bg' : "url('/pattern-bg.png')",
+      spacing: {
+        's-900': '900px'
+      }
+      ,
+      screens: {
+        'desktop': '1440px',
+        'mobile': '375px',
+      },
+      backgroundImage: {
+        'img-bg': "url('/pattern-bg.png')",
       }
     },
   },
