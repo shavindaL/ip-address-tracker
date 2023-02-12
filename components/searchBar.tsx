@@ -5,7 +5,7 @@ interface CustomProp {
 }
 
 const SearchBar = ({ setSearchTerm }: CustomProp) => {
-    const [data, setData] = useState<string>();
+    const [data, setData] = useState<string>('');
 
     const onClickSearch = () => {
         setSearchTerm(data);
@@ -17,13 +17,13 @@ const SearchBar = ({ setSearchTerm }: CustomProp) => {
                 <div>
                     <input
                         type="text"
-                        className="rounded-tl-lg rounded-bl-lg h-62px w-w-900 pl-4 pr-4 text-2xl placeholder:text-lg placeholder:text-center focus:outline-none"
+                        className="rounded-tl-lg rounded-bl-lg h-62px w-900 pl-4 pr-4 text-2xl placeholder:text-lg placeholder:text-center focus:outline-none"
                         placeholder="Search for any IP address or domain"
                         onInput={(event) => setData(event.currentTarget.value)}
                     />
                 </div>
                 <div
-                    className="absolute left-s-900 top-0 bg-very-dark-grey rounded-tr-lg rounded-br-lg p-5 focus:border-none hover:cursor-pointer"
+                    className="absolute left-900 top-0 bg-very-dark-grey rounded-tr-lg rounded-br-lg p-5 focus:border-none hover:cursor-pointer"
                     onClick={() => {
                         onClickSearch();
                     }}

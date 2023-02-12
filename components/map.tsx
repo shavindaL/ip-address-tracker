@@ -1,19 +1,19 @@
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 
-const Map = () => {
+interface CustomProp {
+    lat: number,
+    lng: number
+}
 
-    function getIP(ip :string) {
-        console.log(ip);
-        
-    }
-
+const Map = (prop :CustomProp) => {    
+    
     return (
-            <MapContainer center={[6.93548,  79.84868]} zoom={16} scrollWheelZoom={false}>
+            <MapContainer center={[prop.lat,  prop.lng]} zoom={13} scrollWheelZoom={false}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[6.93548,  79.84868]}>
+                <Marker position={[prop.lat,  prop.lng]}>
                     <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>

@@ -29,7 +29,8 @@ module.exports = {
         '62px' : '62px'
       },
       spacing: {
-        's-900': '900px'
+        '900': '900px',
+        '1500': '1500px'
       }
       ,
       screens: {
@@ -38,6 +39,9 @@ module.exports = {
       },
       backgroundImage: {
         'img-bg': "url('/pattern-bg.png')",
+      },
+      zIndex:{
+        '500' : 500,
       }
     },
   },
