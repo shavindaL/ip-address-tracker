@@ -1,6 +1,8 @@
 interface CustomProp {
   ip: string;
-  location: string;
+  city : string;
+  country: string;
+  postalCode: string;
   isp: string;
   timezone: string;
 }
@@ -17,11 +19,11 @@ const DetailCard = (prop: CustomProp) => {
           </div>
           <div className=" mr-4 border-r-2 border-solid h-20 w-80 border-dark-grey ">
             <p className="text-dark-grey">Location</p>
-            <p className="font-weight-800 text-3xl">{prop.location}</p>
+            <p className="font-weight-800 text-3xl">{prop.city}, {prop.country} {prop.postalCode?prop.postalCode:null}</p>
           </div>
           <div className=" mr-4 border-r-2 border-solid h-20 w-80 border-dark-grey ">
             <p className="text-dark-grey">TIMEZONE </p>
-            <p className="font-weight-800 text-3xl">{prop.timezone}</p>
+            <p className="font-weight-800 text-3xl">UTC {prop.timezone}</p>
           </div>
           <div className=" mr-4 w-80 ">
             <p className="text-dark-grey">ISP </p>

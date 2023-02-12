@@ -19,15 +19,24 @@ const DetailCard = dynamic(() => import("../../components/detailCard"), {
 export default function Home() {
 
   const [userIp, setUserIp] = useState<string>(""); //User's current ip
-  const [location, setLocation] = useState<string>("");
+  const [city, setCity] = useState<string>("");
+  const [country, setCountry] = useState<string>("");
+  const [postalCode, setPostalCode] = useState<string>("");
   const [isp, setIsp] = useState<string>("");
   const [timezone, setTimeZone] = useState<string>("");
   const [lat, setLat] = useState<number>(0);
-  const [lng, setLng] = useState<number>(0)
-
+  const [lng, setLng] = useState<number>(0);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
-  const apiKey = "at_T6PM6YS62WAWOccPGwZgFp0BPDFUs";
+  const apiKey = "at_H7NUTsozizJ5lrHJFaynZjYrKCWFG";
+  
+  const getSearchTerm = (data: string) => {
+    setUserIp(data);
+  };
+
+  
+
+  
 
   //* Get Geo Location Data
   const getLocationData = async (ip: string) => {
@@ -38,7 +47,9 @@ export default function Home() {
     console.log(data);
 
     if (res.ok) {
-      setLocation(data.location.country);
+      setCity(data.location.city);
+      setCountry(data.location.country);
+      setPostalCode(data.location.postalCode);
       setIsp(data.isp);
       setTimeZone(data.location.timezone);
       setUserIp(data.ip);
@@ -47,16 +58,13 @@ export default function Home() {
     }
   };
 
-  getLocationData(userIp);
-
   useEffect(() => {
-    if (isLoaded) getLocationData(userIp);
-    else setIsLoaded(true);
-  }, [userIp, isLoaded]);
+    if (isLoaded) 
+    getLocationData(userIp);
+    else 
+    setIsLoaded(true);
+  }, [getSearchTerm, isLoaded]);
 
-  const getSearchTerm = (data: string) => {
-    setUserIp(data);
-  };
 
   return (
     <>
@@ -73,8 +81,10 @@ export default function Home() {
             <div className="absolute top-60 z-500">
               <DetailCard
                 ip={userIp}
-                location={location}
+                city={city}
+                country={country}
                 timezone={timezone}
+                postalCode={postalCode}
                 isp={isp}
               />
             </div>
