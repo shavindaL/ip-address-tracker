@@ -8,7 +8,11 @@ const SearchBar = ({ setSearchTerm }: CustomProp) => {
     const [data, setData] = useState<string>('');
 
     const onClickSearch = () => {
-        setSearchTerm(data);
+        const re = new RegExp('^(?:(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(\.(?!$)|$)){4}$');
+        if(re.test(data))
+        setSearchTerm(data)
+        else
+        alert("invalid ipv4 address")        
     };
 
     return (

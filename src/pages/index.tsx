@@ -44,8 +44,6 @@ export default function Home() {
       `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`
     );
     const data = await res.json();
-    console.log(data);
-
     if (res.ok) {
       setCity(data.location.city);
       setCountry(data.location.country);
