@@ -17,13 +17,13 @@ const SearchBar = ({ setSearchTerm }: CustomProp) => {
                 <div>
                     <input
                         type="text"
-                        className="rounded-tl-lg rounded-bl-lg h-62px w-900 pl-4 pr-4 text-2xl placeholder:text-lg placeholder:text-center focus:outline-none"
+                        className="rounded-tl-lg rounded-bl-lg h-62px desktop:w-900  tablet:w-720 mobile:w-280 pl-4 pr-4 text-2xl placeholder:text-lg placeholder:text-center focus:outline-none"
                         placeholder="Search for any IP address or domain"
                         onInput={(event) => setData(event.currentTarget.value)}
                     />
                 </div>
                 <div
-                    className="absolute left-900 top-0 bg-very-dark-grey rounded-tr-lg rounded-br-lg p-5 focus:border-none hover:cursor-pointer"
+                    className="absolute desktop:left-900 tablet:left-720 mobile:left-280 top-0 bg-very-dark-grey rounded-tr-lg rounded-br-lg p-5 focus:border-none hover:cursor-pointer"
                     onClick={() => {
                         onClickSearch();
                     }}

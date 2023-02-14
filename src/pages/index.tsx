@@ -28,7 +28,7 @@ export default function Home() {
   const [lng, setLng] = useState<number>(0);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
-  const apiKey = "at_H7NUTsozizJ5lrHJFaynZjYrKCWFG";
+  const apiKey = "at_yfHAXAToIq8NCydq4M5NlUTOivIxN";
   
   const getSearchTerm = (data: string) => {
     setUserIp(data);
@@ -72,7 +72,7 @@ export default function Home() {
         <div className="bg-img-bg bg-cover h-1/3 ">
           <div className="flex justify-center ">
             <div className="items-center">
-              <h1 className="text-6xl text-white font-weight-500 font-rubik mt-10 mb-10 text-center">
+              <h1 className="text-6xl text-white font-weight-500 font-rubik mt-10 mb-10 text-center mobile:text-2xl">
                 IP Address Tracker
               </h1>
 
