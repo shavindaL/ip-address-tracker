@@ -28,15 +28,9 @@ export default function Home() {
   const [lng, setLng] = useState<number>(0);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
-  const apiKey = "at_yfHAXAToIq8NCydq4M5NlUTOivIxN";
-  
   const getSearchTerm = (data: string) => {
     setUserIp(data);
   };
-
-  
-
-  
 
   //* Get Geo Location Data
   const getLocationData = async (ip: string) => {
