@@ -41,7 +41,7 @@ export default function Home() {
   //* Get Geo Location Data
   const getLocationData = async (ip: string) => {
     const res: Response = await fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`
+      `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.NEXT_PUBLIC_APi_KEY}&ipAddress=${ip}`
     );
     const data = await res.json();
     if (res.ok) {
